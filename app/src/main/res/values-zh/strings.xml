@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name -->
+    <string name="app_name">Fieldwatch</string>
+
+    <!-- Live Screen -->
+    <string name="live_display_paused">显示已暂停 · 无线电仍在扫描和记录。过滤器在再次运行时仍然生效。点击"实时"重新运行列表。</string>
+    <string name="live_arrivals_only_learning">仅新设备 · 正在学习静默 Wi-Fi</string>
+    <string name="live_arrivals_only_hidden">仅新设备 · 隐藏了 %d 个</string>
+    <string name="live_arrivals_only">仅新设备</string>
+    <string name="live_follow_path">跟随 · 路径 %.0f 米 · 重新开始会清除路径</string>
+    <string name="live_watched_only">仅关注设备</string>
+    <string name="live_named_only">仅命名设备</string>
+    <string name="live_sit_running">坐标 · %s · %s · %d 个无线电%s</string>
+    <string name="live_sit_memory_cap"> · 内存上限</string>
+    <string name="live_sit_radio_cap"> · %d 上限</string>
+    <string name="live_end_sit">结束坐标</string>
+    <string name="live_flood_notice">%s</string>
+    <string name="live_hide_this_burst">隐藏此爆发</string>
+    <string name="live_hiding_one_flood">隐藏 1 个洪泛无线电</string>
+    <string name="live_hiding_multiple_floods">隐藏 %d 个洪泛无线电</string>
+    <string name="live_flood_dialog_title">%s</string>
+    <string name="live_flood_dialog_body">%s</string>
+    <string name="live_flood_continue">继续</string>
+    <string name="live_flood_hide_these">隐藏这些</string>
+    <string name="live_seen_times_format">首次 %s · 最近 %s</string>
+    <string name="live_age_seconds">%ds</string>
+    <string name="live_age_minutes_seconds">%dm %ds</string>
+    <string name="live_age_minutes">%dm</string>
+    <string name="live_age_hours_minutes">%dh %dm</string>
+    <string name="live_age_hours">%dh</string>
+    <string name="live_unnamed_le">未命名</string>
+    <string name="live_radio_facts">%s</string>
+    <string name="live_channel_format">ch%d</string>
+    <string name="live_frequency_format">%dMHz</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">设置</string>
+    <string name="settings_appearance">外观</string>
+    <string name="settings_night_mode">夜间模式</string>
+    <string name="settings_night_mode_desc">默认关闭。红底黑字的现场显示，使芯片、文本和信号标记不会在黑暗坐标中泄漏绿色或蓝色。背景保持深色。手机亮度不变。</string>
+    <string name="settings_keep_screen_on">保持屏幕常亮</string>
+    <string name="settings_keep_screen_on_desc">默认开启。Fieldwatch 打开时阻止显示休眠，这样手机熄屏时 BLE 不会被挂起。离开应用后扫描仍在通知中运行。把手机放进口袋时关闭它。</string>
+    <string name="settings_privacy_mode">隐私模式</string>
+    <string name="settings_privacy_mode_desc">在实时、雷达、时间轴、详情、搜寻、命名无线电和关注列表卡片上隐藏每个 MAC 的后三个八位组为 **:**:**，这样屏幕和坐标报告不显示完整地址。GPS 最近定位和 Debrief / AI 导出 / 详情分享的坐标变为"已屏蔽"；这些坐标报告中省略街道名称。前三个八位组（OUI/厂商前缀）保留。默认关闭。开启"在线地名和地图"时，报告 → 路径上的地图仍会加载。日志、匹配、过滤器、搜寻数学、跟随测试和已保存签名仍使用真实 MAC 和 GPS。如果你开启了 TAK / CoT 馈送，开启此项时会暂停，这样完整 MAC 和坐标不会发送到局域网。需要屏幕上显示完整地址或坐标时关闭此项。</string>
+    <string name="settings_scanning">扫描</string>
+    <string name="settings_scan_intensity">扫描强度 · %s</string>
+    <string name="settings_scan_saver">省电模式</string>
+    <string name="settings_scan_balanced">均衡</string>
+    <string name="settings_scan_performance">高性能</string>
+    <string name="settings_scan_intensity_desc">Wi-Fi 是批量无线电：手机一次抓取所有 AP，然后必须等待。高性能约每 30 秒请求一次 —— 这是在 OS 限制的两分钟四次扫描下能保持的最快节奏。BLE 在间隙中持续流式传输。</string>
+    <string name="settings_wifi_waiting_os">Wi-Fi 等待 OS</string>
+    <string name="settings_wifi_scanning">Wi-Fi 正在扫描</string>
+    <string name="settings_wifi_next_99s">Wi-Fi 下一次 99 秒</string>
+    <string name="settings_faster_wifi_scans">更快的 Wi-Fi AP 扫描</string>
+    <string name="settings_faster_wifi_scans_desc_old">需要 Android 11+ 以便 Fieldwatch 读取 OS 是否仍在限制扫描。此手机无法确认，因此开关保持关闭。</string>
+    <string name="settings_faster_wifi_scans_desc_active">已激活。手机每约 10 秒扫描一次 Wi-Fi AP，而不是约 30 秒。当 OS 限制生效时会自动关闭（见下方）。</string>
+    <string name="settings_faster_wifi_scans_desc_throttled">OS 正在限制扫描。在开发者选项中关闭"Wi-Fi 扫描限制"后，此开关才会生效。</string>
+    <string name="settings_faster_wifi_scans_desc_dev_options">在开发者选项中关闭"Wi-Fi 扫描限制"以启用更快的扫描。某些 OEM 将其放在网络/互联网 → Wi-Fi → Wi-Fi 首选项 → 高级 → Wi-Fi 扫描限制。</string>
+    <string name="settings_ble_settings">蓝牙 LE 设置</string>
+    <string name="settings_ble_background">后台 BLE 扫描</string>
+    <string name="settings_ble_background_desc">默认开启。应用在后台或屏幕关闭时继续扫描 BLE 广播。通知会保持可见。关闭以在后台停止 BLE。</string>
+    <string name="settings_ble_duplicate_filter">BLE 去重过滤</string>
+    <string name="settings_ble_duplicate_filter_desc">默认开启。在扫描回调中去除重复广播，减少相同数据的重复处理。关闭可看到每个原始回调。</string>
+    <string name="settings_ble_long_range">BLE 远距离模式 (PHY 编码)</string>
+    <string name="settings_ble_long_range_desc">默认关闭。请求编码 PHY (LE Coded) 以获得更远范围，吞吐量更低。并非所有控制器都支持。</string>
+    <string name="settings_battery_optimization">电池优化</string>
+    <string name="settings_battery_optimization_desc">某些 OEM 即使开启了"忽略电池优化"也会在后台限制 BLE。如果扫描在口袋里停止，请打开应用电池页面并选择"无限制"或"允许后台使用"。</string>
+    <string name="settings_open_battery_page">打开应用电池页面</string>
+    <string name="settings_open_battery_page_unrestricted">打开应用电池页面 (无限制)</string>
+    <string name="settings_background_restricted">后台受限：%s</string>
+    <string name="settings_background_allowed">后台允许：%s</string>
+    <string name="settings_unrestricted">无限制：%s</string>
+    <string name="settings_yes">是</string>
+    <string name="settings_no">否</string>
+    <string name="settings_tag_location">标记检测位置 (GPS)</string>
+    <string name="settings_tag_location_desc">开启时，每次检测记录手机的 GPS 修正（若可用）。坐标报告、GPX/KML/WiGLE 和 AI 导出将包含位置。实时列表显示"首次/最近"时间；详情显示首次/最近坐标。关闭以停止记录位置；现有日志保留坐标。即使开启，如果 OS 未给出修正（如室内），也不会写入坐标。</string>
+    <string name="settings_online_maps">在线地名和地图</string>
+    <string name="settings_online_maps_desc">开启时，报告 → 路径使用系统地理编码器（通常为 OEM/Google 网络）显示街道名称和地图瓦片。离线时坐标仍在日志/导出中。这是发往系统地理编码器的网络请求，不是 Fieldwatch 云端。</string>
+    <string name="settings_log_export">日志导出</string>
+    <string name="settings_export_signatures">导出签名</string>
+    <string name="settings_import_signatures">导入签名</string>
+    <string name="settings_export_settings">导出设置</string>
+    <string name="settings_import_settings">导入设置</string>
+    <string name="settings_restore_defaults">恢复默认签名和预设</string>
+    <string name="settings_restore_defaults_desc">把内置签名目录和过滤器预设恢复为出厂状态。你添加的签名和保存的预设会被删除。日志、坐标、命名无线电、关注列表、车队和设置不受影响。</string>
+    <string name="settings_restore_confirm">恢复默认签名和预设？</string>
+    <string name="settings_restore_confirm_body">这会删除你添加的签名和保存的预设。日志、坐标、命名无线电、关注列表、车队和设置不受影响。</string>
+    <string name="settings_restore">恢复</string>
+    <string name="settings_cancel">取消</string>
+    <string name="settings_clear_log">清除日志</string>
+    <string name="settings_clear_log_desc">删除所有记录的无线电和坐标。已保存的坐标、命名无线电、关注列表、车队、签名和设置不受影响。</string>
+    <string name="settings_clear_log_confirm">清除日志？</string>
+    <string name="settings_clear_log_confirm_body">删除所有记录的无线电和坐标。已保存的坐标、命名无线电、关注列表、车队、签名和设置不受影响。</string>
+    <string name="settings_clear">清除</string>
+    <string name="settings_diagnostics">诊断</string>
+    <string name="settings_diagnostics_desc">列出手机、无线电和扫描选项。</string>
+    <string name="settings_about">关于</string>
+    <string name="settings_version">版本 %s (%d)</string>
+    <string name="settings_license">MIT 许可证</string>
+    <string name="settings_github">GitHub</string>
+    <string name="settings_manual">用户手册</string>
+    <string name="settings_disclaimer">免责声明</string>
+    <string name="settings_acknowledgments">致谢</string>
+
+    <!-- Reports Screen -->
+    <string name="reports_title">报告</string>
+    <string name="reports_privacy_mode_notice">隐私模式开启。Debrief、坐标比较、AI 导出（坐标或比较）和详情分享中的 MAC 尾部为 **:**:**。这些报告中的 GPS 坐标和 Remote ID UAS ID 被屏蔽。日志文件、坐标导出和 GPX/KML/WiGLE 文件仍包含完整地址和经纬度。</string>
+    <string name="reports_sits_section">坐标</string>
+    <string name="reports_sits_desc">坐标是此处听到的无线电的命名时间窗。下方选择驱动路径、Debrief 和比较的"此坐标"侧：打开的坐标、选定的已保存坐标，或从未开始则为最近 15 分钟。</string>
+    <string name="reports_this_sit">此坐标：%s · %s · %d 个无线电</string>
+    <string name="reports_end_sit">结束坐标</string>
+    <string name="reports_start_sit">开始坐标</string>
+    <string name="reports_no_sit_running">未运行坐标。在此开始坐标。路径和 Debrief 保持最近 15 分钟直到你开始。</string>
+    <string name="reports_no_sit_running_with_saved">未运行坐标。在此开始坐标。路径和 Debrief 使用选定的坐标。</string>
+    <string name="reports_no_saved_sits">无已保存坐标。</string>
+    <string name="reports_last_15_minutes">最近 15 分钟</string>
+    <string name="reports_last_15_minutes_desc">路径和 Debrief 使用内存，而非已保存的坐标。</string>
+    <string name="reports_sit_subtitle_format">%s · %s · %d 个无线电%s</string>
+    <string name="reports_extra_attention"> · 额外关注 %d</string>
+    <string name="reports_end_sit_to_pick">结束坐标以选取已保存的坐标用于路径和 Debrief。</string>
+    <string name="reports_rename">重命名</string>
+    <string name="reports_delete">删除</string>
+    <string name="reports_delete_all_sits">删除所有坐标</string>
+    <string name="reports_delete_all_confirm">删除所有坐标？</string>
+    <string name="reports_path_section">路径</string>
+    <string name="reports_path_desc">北向上。线条是此手机。黑点是起点。蓝点是你，在最后一点。MAC 或签名警报是一个类别图标。解码的经纬度使用该无线电发送的最后位置。计数是同一位置的多个。粗绿线是停留。时间刻度沿路径分布。</string>
+    <string name="reports_path_privacy_mode">隐私模式开启 · 地图隐藏。在设置中关闭以显示地图。</string>
+    <string name="reports_path_no_gps">无 GPS 点可绘制路径。</string>
+    <string name="reports_debrief_section">Debrief</string>
+    <string name="reports_debrief_desc">所选坐标的叙述摘要。在线地名和地图开启时包含街道名称。模式匹配，非身份识别。非安全发现。</string>
+    <string name="reports_debrief_generate">生成 Debrief</string>
+    <string name="reports_debrief_this_sit_format">此坐标：%s — 命名窗口（最多 %d）。与 Debrief 相同。</string>
+    <string name="reports_compare_section">比较</string>
+    <string name="reports_compare_desc">两个坐标并列：MAC、类别、信号、首次/最近、解码、车队、飞机。模式匹配，非身份识别。非安全发现。</string>
+    <string name="reports_compare_with">比较目标</string>
+    <string name="reports_compare_this_sit_format">此坐标：%s — 命名窗口（最多 %d）。与 Debrief 相同。</string>
+    <string name="reports_compare_other_sit_format">其他坐标：%s — 命名窗口（最多 %d）。</string>
+    <string name="reports_compare_last_15">此坐标：内存中最近 15 分钟（约 400 个无线电）。与 Debrief 相同。</string>
+    <string name="reports_compare_generate">生成比较</string>
+    <string name="reports_export_section">导出</string>
+    <string name="reports_log_export">日志导出</string>
+    <string name="reports_log_export_hint">完整日志：每个无线电一行，含原始广告。CSV/JSON/GPX/KML/WiGLE。</string>
+    <string name="reports_sit_export">坐标导出</string>
+    <string name="reports_sit_export_hint">仅所选坐标的无线电。CSV/JSON/GPX/KML/WiGLE。</string>
+    <string name="reports_ai_export">AI 导出</string>
+    <string name="reports_ai_export_sit_hint">所选坐标的结构化摘要，用于粘贴到 LLM。包含解码、车队、飞机、跟随测试。</string>
+    <string name="reports_ai_export_compare_hint">两个坐标的结构化对比，用于粘贴到 LLM。</string>
+    <string name="reports_format">格式</string>
+    <string name="reports_radios">无线电</string>
+    <string name="reports_share">分享</string>
+    <string name="reports_save_to_storage">保存到 SD 卡/存储…</string>
+    <string name="reports_sit_report_caption_format">%s — 与路径相同窗口。开启标记位置且已移动时进行 GPS 跟随测试。非法律发现。</string>
+    <string name="reports_log_csv">日志 CSV</string>
+    <string name="reports_log_json">日志 JSON</string>
+    <string name="reports_log_gpx">GPX</string>
+    <string name="reports_log_kml">KML</string>
+    <string name="reports_log_wigle">WiGLE CSV</string>
+    <string name="reports_both">两者</string>
+    <string name="reports_wifi_only">仅 Wi-Fi</string>
+    <string name="reports_ble_only">仅 BLE</string>
+    <string name="reports_signatures_section">签名</string>
+    <string name="reports_signature_candidates">签名候选</string>
+    <string name="reports_signature_candidates_desc">从日志重新匹配目录，寻找可提升为签名的家族。需要两个或更多无线电上的唯一在线 ID。</string>
+
+    <!-- Filters Screen -->
+    <string name="filters_title">过滤器</string>
+    <string name="filters_presets_section">预设</string>
+    <string name="filters_presets_desc">点击替换整个过滤器。长按芯片删除它。附带简短内置集；"另存为…"添加你自己的（摄像头、广场 −80 等）。你删除的内置芯片会随设置 → 恢复默认签名和预设回来。</string>
+    <string name="filters_save_current_as">另存为…</string>
+    <string name="filters_save">保存</string>
+    <string name="filters_radios_section">无线电</string>
+    <string name="filters_radios_desc_moving">跟随测试仅限 BLE。在你关闭该开关前，"两者"和"仅 Wi-Fi"保持关闭。</string>
+    <string name="filters_radios_desc_normal">这些是包含开关。两者都开以同时查看 Wi-Fi 和 BLE。单个设备永远不会两者兼有。</string>
+    <string name="filters_both">两者</string>
+    <string name="filters_wifi_only">仅 Wi-Fi</string>
+    <string name="filters_ble_only">仅 BLE</string>
+    <string name="filters_moving_with_you_section">跟随测试</string>
+    <string name="filters_moving_with_you">跟随测试</string>
+    <string name="filters_moving_with_you_desc_off">开启设置 → 标记检测位置，然后步行或驾驶。仅响亮的始终随你移动的 BLE 广播者。Wi-Fi 接入点保持关闭 —— 你驶过的响亮 AP 会描绘你的路径。开关启动 BLE 跟随测试（清除"仅签名/仅显示"、"仅命名无线电"、"仅关注设备"）。或点击顶部的"跟随测试"预设。</string>
+    <string name="filters_moving_with_you_desc_learning">GPS 路径至今 %.0f 米。继续移动（约 50 米）。如果驾驶时仍为 0，位置未给出实时修正（将位置设为高精度）。仅最后已知位置不够。第二台 iPhone 通常不匹配：BLE MAC 轮换开始新无线电。%s%s%s</string>
+    <string name="filters_moving_with_you_desc_filtered">GPS 路径 %.0f 米。"仅签名"、"类别仅显示"、"仅命名无线电"或"仅关注设备"也开启，因此只有那些无线电能共同移动。点击"跟随测试"预设测试 BLE。包里的标签或车里的应匹配。Wi-Fi 接入点保持隐藏。</string>
+    <string name="filters_moving_with_you_desc_active">GPS 路径 %.0f 米。跟随测试激活。Wi-Fi 接入点隐藏。%s%s%s</string>
+    <string name="filters_named_only_on">"仅命名无线电"也开启 —— 未标记无线电保持隐藏。</string>
+    <string name="filters_watched_only_on">"仅关注设备"也开启 —— 未关注无线电保持隐藏。</string>
+    <string name="filters_named_only_implied_on">"仅签名/仅显示"也开启 —— 未匹配无线电保持隐藏。</string>
+    <string name="filters_hide_mine_on">"隐藏我的无线电"开启 —— 那些不在此列表。</string>
+    <string name="filters_signatures_section">签名</string>
+    <string name="filters_signatures_only">仅签名/仅显示</string>
+    <string name="filters_signatures_only_desc">仅显示匹配签名目录的无线电。未匹配的保持隐藏（除非"跟随测试"开启）。</string>
+    <string name="filters_show_only">仅显示</string>
+    <string name="filters_show_only_desc">仅显示选定类别/签名的无线电。展开类别选择签名。空 = 该类别全部。"跟随测试"开启时此项清除。</string>
+    <string name="filters_hide">隐藏</string>
+    <string name="filters_hide_desc">隐藏选定类别/签名的无线电。展开类别选择签名。"跟随测试"开启时此项清除。</string>
+    <string name="filters_hide_mine">隐藏我的无线电</string>
+    <string name="filters_hide_mine_desc">从实时、雷达、时间轴、详情、搜寻、命名无线电和关注列表隐藏标记为"我的"的无线电。日志、匹配、搜寻数学、跟随测试和已保存签名仍使用它们。</string>
+    <string name="filters_named_only">仅命名无线电</string>
+    <string name="filters_named_only_desc">仅显示有自定义名称或广播名称的无线电。其他全部隐藏。"跟随测试"开启时此项清除。</string>
+    <string name="filters_watched_only">仅关注设备</string>
+    <string name="filters_watched_only_desc">仅显示关注列表上的无线电。其他全部隐藏。"跟随测试"开启时此项清除。</string>
+    <string name="filters_arrivals_only">仅新设备</string>
+    <string name="filters_arrivals_only_desc">仅显示自打开此开关以来首次看到的无线电。已知无线电隐藏。学习静默 Wi-Fi 时计数器显示。"跟随测试"开启时此项清除。</string>
+    <string name="filters_display_section">显示</string>
+    <string name="filters_show_rssi_bar">显示 RSSI 条</string>
+    <string name="filters_show_fleet_name">显示车队名称</string>
+    <string name="filters_show_frequency">显示频率/信道</string>
+    <string name="filters_show_seen_times">显示首次/最近时间</string>
+    <string name="filters_list_title_line">标题行</string>
+    <string name="filters_list_subtitle_line">副标题行</string>
+    <string name="filters_average_window_sec">平均窗口（秒）</string>
+    <string name="filters_list_title_options">MAC、名称、类别、车队、信号、频率、首次、最近、计数</string>
+    <string name="filters_list_subtitle_options">MAC、名称、类别、车队、信号、频率、首次、最近、计数</string>
+
+    <!-- Hunt Screen -->
+    <string name="hunt_title">搜寻</string>
+    <string name="hunt_reset">重置此搜寻</string>
+    <string name="hunt_back_to_detail">返回详情</string>
+    <string name="hunt_beep">蜂鸣</string>
+    <string name="hunt_vibrate">震动</string>
+    <string name="hunt_rssi_explain_format">%s</string>
+    <string name="hunt_loudest_this_hunt">本次搜寻最响 %d dBm</string>
+    <string name="hunt_loudest_none">本次搜寻最响 —</string>
+    <string name="hunt_last_heard_never">最后听到 —</string>
+    <string name="hunt_last_heard_seconds">最后听到 %ds 前</string>
+    <string name="hunt_last_heard_minutes">最后听到 %dm 前</string>
+    <string name="hunt_cue_very_close">非常近</string>
+    <string name="hunt_cue_closer">更近</string>
+    <string name="hunt_cue_further">更远</string>
+    <string name="hunt_cue_same">相同</string>
+    <string name="hunt_cue_waiting">等待中</string>
+    <string name="hunt_cue_quiet">安静</string>
+    <string name="hunt_cue_gone">消失</string>
+    <string name="hunt_hint_very_close">你几乎就在它上面。绕小圈确认。</string>
+    <string name="hunt_hint_closer">信号增强。继续当前方向。</string>
+    <string name="hunt_hint_further">信号减弱。转向或后退。</string>
+    <string name="hunt_hint_same">信号稳定。尝试不同角度。</string>
+    <string name="hunt_hint_waiting">等待下一个样本…</string>
+    <string name="hunt_hint_quiet">信号很弱。靠近或等待。</string>
+    <string name="hunt_hint_gone">信号丢失。重置搜寻重试。</string>
+
+    <!-- Device Detail Screen -->
+    <string name="device_detail_back">返回</string>
+    <string name="device_detail_not_on_air">不在空中。这是我们听到的最后详情。</string>
+    <string name="device_detail_custom_name">自定义名称</string>
+    <string name="device_detail_advertised_name">广播名称</string>
+    <string name="device_detail_no_advertised_name">无广播名称</string>
+    <string name="device_detail_name">名称</string>
+    <string name="device_detail_edit_custom_name">编辑自定义名称</string>
+    <string name="device_detail_hide_custom_name">隐藏自定义名称</string>
+    <string name="device_detail_custom_name_label">自定义名称</string>
+    <string name="device_detail_custom_name_hint">%s</string>
+    <string name="device_detail_save_name">保存名称</string>
+    <string name="device_detail_saved">已保存</string>
+    <string name="device_detail_observer_notes">观察员备注</string>
+    <string name="device_detail_observer_notes_hint">%d/%d</string>
+    <string name="device_detail_observer_notes_saved">已保存</string>
+    <string name="device_detail_save_notes">保存备注</string>
+    <string name="device_detail_rssi">RSSI</string>
+    <string name="device_detail_rssi_explain">%s</string>
+    <string name="device_detail_first_seen">首次看到</string>
+    <string name="device_detail_last_seen">最近看到</string>
+    <string name="device_detail_channel">信道</string>
+    <string name="device_detail_frequency">频率</string>
+    <string name="device_detail_vendor">厂商</string>
+    <string name="device_detail_manufacturer_id">制造商 ID</string>
+    <string name="device_detail_company_id">公司 ID</string>
+    <string name="device_detail_service_data">服务数据</string>
+    <string name="device_detail_manufacturer_data">制造商数据</string>
+    <string name="device_detail_uuids">UUID</string>
+    <string name="device_detail_decode">解码</string>
+    <string name="device_detail_raw_advertisement">原始广播</string>
+    <string name="device_detail_share">分享</string>
+    <string name="device_detail_hunt">搜寻</string>
+    <string name="device_detail_create_fleet">创建车队</string>
+    <string name="device_detail_bookmark">加书签</string>
+    <string name="device_detail_remove_bookmark">移除书签</string>
+    <string name="device_detail_mine">我的</string>
+    <string name="device_detail_alert">警报</string>
+    <string name="device_detail_what_this_looks_like">这看起来像什么</string>
+    <string name="device_detail_pattern_match_not_identity">模式匹配，非身份识别。非安全发现。</string>
+    <string name="device_detail_guess_headline">%s</string>
+    <string name="device_detail_guess_because">%s</string>
+    <string name="device_detail_fleet_section">车队</string>
+    <string name="device_detail_fleet_name">%s</string>
+    <string name="device_detail_fleet_attention_note">%s</string>
+    <string name="device_detail_fleet_observer_notes">观察员备注</string>
+    <string name="device_detail_fleet_decode">解码映射</string>
+    <string name="device_detail_signature_match">签名匹配</string>
+    <string name="device_detail_signature_match_desc">此无线电匹配以下签名：</string>
+    <string name="device_detail_class_outline">类别轮廓</string>
+    <string name="device_detail_class_outline_desc">目录中此类别的规则：</string>
+    <string name="device_detail_no_signature_match">此无线电不匹配任何签名。</string>
+    <string name="device_detail_no_class_outline">此类别无轮廓规则。</string>
+    <string name="device_detail_presence_track">在场轨迹</string>
+    <string name="device_detail_sparkline">趋势图</string>
+    <string name="device_detail_meta_format">%s</string>
+
+    <!-- Radio Bookmarks Screen -->
+    <string name="radio_bookmarks_title">命名无线电 (%d)</string>
+    <string name="radio_bookmarks_desc">每个 MAC 一个。自定义名称显示在实时列表。"我的"标记为你的：开启时不蜂鸣，仍在列表。观察员备注显示在详情和报告。警报可选（滴答/语音/闪烁）。过滤器 → 仅命名无线电隐藏其他所有。签名关注保持在签名上。</string>
+    <string name="radio_bookmarks_no_named">无命名无线电。在详情设置自定义名称，或加书签（右上角）关注无线电。</string>
+    <string name="radio_bookmarks_on_air">在空中 — 点击打开详情</string>
+    <string name="radio_bookmarks_not_this_session">非本会话</string>
+    <string name="radio_bookmarks_clear_all">清除所有 %d 个命名无线电</string>
+    <string name="radio_bookmarks_clear_all_confirm">清除命名无线电？</string>
+    <string name="radio_bookmarks_clear_all_body">移除 %d 个命名无线电。签名关注保留。</string>
+    <string name="radio_bookmarks_clear">清除</string>
+    <string name="radio_bookmarks_named_radio">命名无线电</string>
+    <string name="radio_bookmarks_custom_name">自定义名称</string>
+    <string name="radio_bookmarks_observer_notes">观察员备注</string>
+    <string name="radio_bookmarks_save">保存</string>
+
+    <!-- Candidates Screen -->
+    <string name="candidates_title">签名候选</string>
+    <string name="candidates_back">返回</string>
+    <string name="candidates_loading">正在读取日志并重新匹配目录…</string>
+    <string name="candidates_error">%s</string>
+    <string name="candidates_report_format">%s · 刚刚重新匹配%s</string>
+    <string name="candidates_families_count"> · %d 个%s</string>
+    <string name="candidates_family_single">家族</string>
+    <string name="candidates_family_plural">家族</string>
+    <string name="candidates_skipped_format">跳过 %s</string>
+    <string name="candidates_skipped_randomized">%d 个随机化地址</string>
+    <string name="candidates_skipped_house_like">%d 个类住宅名称</string>
+    <string name="candidates_skipped_and">和</string>
+    <string name="candidates_skipped_not_families">那些不是目录家族。</string>
+    <string name="candidates_no_families">此日志无签名家族。随机化地址和类住宅名称被跳过。候选需要两个或更多无线电上的唯一在线 ID。</string>
+    <string name="candidates_create_signature">创建签名</string>
+    <string name="candidates_distinct_radios">%d</string>
+    <string name="candidates_rule_label">%s</string>
+    <string name="candidates_why">%s</string>
+    <string name="candidates_examples_format">%s%s</string>
+    <string name="candidates_extra_count">
+还有 %d 个</string>
+
+    <!-- Decode Fields Screen -->
+    <string name="decode_fields_title">解码字段</string>
+    <string name="decode_fields_back">返回</string>
+    <string name="decode_fields_save">保存</string>
+    <string name="decode_fields_source_section">源</string>
+    <string name="decode_fields_source_desc">映射此签名匹配后的明文 BLE 字节。加密广播保持十六进制。</string>
+    <string name="decode_fields_source_manufacturer">制造商</string>
+    <string name="decode_fields_source_service_data">服务数据</string>
+    <string name="decode_fields_company_id">公司 ID</string>
+    <string name="decode_fields_company_id_desc">可选。字节 0 是公司 ID 后的第一个字节。空 = 任意记录。</string>
+    <string name="decode_fields_service_uuid">服务 UUID</string>
+    <string name="decode_fields_service_uuid_desc">必需。16 位 (FEAA) 或完整 UUID。</string>
+    <string name="decode_fields_fields_section">字段</string>
+    <string name="decode_fields_add_field">添加字段</string>
+    <string name="decode_fields_remove_decode_map">移除解码映射</string>
+    <string name="decode_fields_remove_desc">清除此签名的所有字段。实时不再显示代码标记。原始广播保留。保存后添加字段仍保留映射。</string>
+    <string name="decode_fields_remove_confirm">移除解码映射？</string>
+    <string name="decode_fields_remove_confirm_body">清除此签名的所有字段。实时不再显示代码标记。原始广播保留。此操作无法撤销，除非重新添加字段。</string>
+    <string name="decode_fields_remove">移除</string>
+    <string name="decode_fields_preview_section">预览</string>
+    <string name="decode_fields_no_matching_device">空中无匹配无线电。仍可保存；详情在听到时填充。</string>
+    <string name="decode_fields_no_bytes_for_source">空中有匹配无线电，但此广播对上述源无字节。</string>
+    <string name="decode_fields_nothing_parsed">无解析内容。检查偏移、长度，并确认字节 0 在公司 ID 之后。</string>
+    <string name="decode_fields_field_label">标签</string>
+    <string name="decode_fields_field_id">ID</string>
+    <string name="decode_fields_field_offset">偏移</string>
+    <string name="decode_fields_field_type">类型</string>
+    <string name="decode_fields_field_endian">字节序</string>
+    <string name="decode_fields_field_when">条件</string>
+    <string name="decode_fields_field_when_op">操作</string>
+    <string name="decode_fields_field_when_value">值</string>
+    <string name="decode_fields_field_enum_map">枚举映射</string>
+    <string name="decode_fields_field_enum_hint">键=标签，每行一对（例：01=开启，02=关闭）</string>
+    <string name="decode_fields_type_u8">U8</string>
+    <string name="decode_fields_type_i8">I8</string>
+    <string name="decode_fields_type_u16">U16</string>
+    <string name="decode_fields_type_i16">I16</string>
+    <string name="decode_fields_type_u32">U32</string>
+    <string name="decode_fields_type_i32">I32</string>
+    <string name="decode_fields_type_float">Float</string>
+    <string name="decode_fields_type_string">String</string>
+    <string name="decode_fields_type_bytes">Bytes</string>
+    <string name="decode_fields_type_skip">Skip</string>
+    <string name="decode_fields_endian_le">LE</string>
+    <string name="decode_fields_endian_be">BE</string>
+    <string name="decode_fields_when_op_eq">equals</string>
+    <string name="decode_fields_when_op_neq">not equals</string>
+    <string name="decode_fields_when_op_mask">mask</string>
+    <string name="decode_fields_when_op_nmask">none of bits</string>
+    <string name="decode_fields_when_op_len">payload length</string>
+    <string name="decode_fields_preview_row_format">%s: %s</string>
+
+    <!-- Scan Status Screen -->
+    <string name="scan_status_title">扫描状态</string>
+    <string name="scan_status_back">返回</string>
+    <string name="scan_status_wifi_section">Wi-Fi</string>
+    <string name="scan_status_ble_section">蓝牙 LE</string>
+    <string name="scan_status_wifi_scans">扫描: %d</string>
+    <string name="scan_status_wifi_results">结果: %d</string>
+    <string name="scan_status_wifi_last_scan">上次扫描: %s</string>
+    <string name="scan_status_wifi_throttled">OS 限制: %s</string>
+    <string name="scan_status_ble_scans">扫描: %d</string>
+    <string name="scan_status_ble_results">结果: %d</string>
+    <string name="scan_status_ble_last_scan">上次扫描: %s</string>
+    <string name="scan_status_ble_duplicate_filter">去重过滤: %s</string>
+    <string name="scan_status_ble_long_range">远距离模式: %s</string>
+    <string name="scan_status_enabled">启用</string>
+    <string name="scan_status_disabled">禁用</string>
+    <string name="scan_status_yes">是</string>
+    <string name="scan_status_no">否</string>
+
+    <!-- Common UI -->
+    <string name="common_back">返回</string>
+    <string name="common_save">保存</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_delete">删除</string>
+    <string name="common_clear">清除</string>
+    <string name="common_rename">重命名</string>
+    <string name="common_edit">编辑</string>
+    <string name="common_share">分享</string>
+    <string name="common_ok">确定</string>
+    <string name="common_continue">继续</string>
+    <string name="common_close">关闭</string>
+    <string name="common_done">完成</string>
+    <string name="common_yes">是</string>
+    <string name="common_no">否</string>
+    <string name="common_on">开</string>
+    <string name="common_off">关</string>
+    <string name="common_enabled">启用</string>
+    <string name="common_disabled">禁用</string>
+    <string name="common_loading">加载中…</string>
+    <string name="common_error">错误</string>
+    <string name="common_none">无</string>
+    <string name="common_unknown">未知</string>
+    <string name="common_never">从不</string>
+    <string name="common_now">刚刚</string>
+    <string name="common_minutes_ago">%d分钟前</string>
+    <string name="common_hours_ago">%d小时前</string>
+    <string name="common_days_ago">%d天前</string>
+
+    <!-- Notifications -->
+    <string name="notification_scanning">Fieldwatch 正在扫描</string>
+    <string name="notification_scanning_desc">Wi-Fi: %d · BLE: %d · 日志: %d 行</string>
+    <string name="notification_tap_to_open">点击打开</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_confirm">确认</string>
+    <string name="dialog_warning">警告</string>
+    <string name="dialog_info">信息</string>
+
+    <!-- TAK / CoT -->
+    <string name="tak_feed_status">馈送状态</string>
+    <string name="tak_feed_paused">馈送状态 · 已暂停 (隐私模式)</string>
+    <string name="tak_feed_error">馈送状态 · 错误: %s</string>
+    <string name="tak_feed_no_send">馈送状态 · 本会话暂未发送</string>
+    <string name="tak_feed_on_feed">馈送上: %d</string>
+    <string name="tak_feed_sent">已发送: %d</string>
+    <string name="tak_feed_gone_one">1 个消失</string>
+    <string name="tak_feed_gone_multiple">%d 个消失</string>
+    <string name="tak_feed_destination">目标: %s</string>
+    <string name="tak_feed_time">%s</string>
+    <string name="tak_feed_detail">%s</string>
+
+    <!-- Alerts -->
+    <string name="alert_beep">蜂鸣</string>
+    <string name="alert_voice">语音</string>
+    <string name="alert_flash">闪烁</string>
+    <string name="alert_voice_what_class">类别</string>
+    <string name="alert_voice_what_name">名称</string>
+    <string name="alert_voice_what_both">两者</string>
+
+    <!-- Units -->
+    <string name="unit_dbm">dBm</string>
+    <string name="unit_mhz">MHz</string>
+    <string name="unit_meters">m</string>
+    <string name="unit_kilometers">km</string>
+    <string name="unit_seconds">s</string>
+    <string name="unit_minutes">m</string>
+    <string name="unit_hours">h</string>
+
+    <!-- Time formats -->
+    <string name="time_format_hh_mm_ss">HH:mm:ss</string>
+
+    <!-- Fleet -->
+    <string name="fleet_create">创建车队</string>
+    <string name="fleet_name">车队名称</string>
+    <string name="fleet_attention_note">关注备注</string>
+    <string name="fleet_observer_notes">观察员备注</string>
+    <string name="fleet_decode">解码映射</string>
+    <string name="fleet_color">颜色</string>
+    <string name="fleet_class">类别</string>
+
+    <!-- Signature -->
+    <string name="signature_create">创建签名</string>
+    <string name="signature_name">签名名称</string>
+    <string name="signature_rule">规则</string>
+    <string name="signature_class">类别</string>
+    <string name="signature_radio_kind">无线电类型</string>
+    <string name="signature_color">颜色</string>
+
+    <!-- Wi-Fi -->
+    <string name="wifi_access_point">接入点</string>
+    <string name="wifi_ssid">SSID</string>
+    <string name="wifi_bssid">BSSID</string>
+    <string name="wifi_channel">信道</string>
+    <string name="wifi_frequency">频率</string>
+    <string name="wifi_rssi">RSSI</string>
+    <string name="wifi_security">安全性</string>
+
+    <!-- BLE -->
+    <string name="ble_advertisement">广播</string>
+    <string name="ble_mac">MAC</string>
+    <string name="ble_name">名称</string>
+    <string name="ble_rssi">RSSI</string>
+    <string name="ble_tx_power">发射功率</string>
+    <string name="ble_manufacturer_data">制造商数据</string>
+    <string name="ble_service_data">服务数据</string>
+    <string name="ble_service_uuids">服务 UUID</string>
+    <string name="ble_connectable">可连接</string>
+
+    <!-- GPS -->
+    <string name="gps_latitude">纬度</string>
+    <string name="gps_longitude">经度</string>
+    <string name="gps_accuracy">精度</string>
+    <string name="gps_altitude">海拔</string>
+    <string name="gps_speed">速度</string>
+    <string name="gps_bearing">方向</string>
+    <string name="gps_time">时间</string>
+    <string name="gps_no_fix">无定位</string>
+
+    <!-- Export formats -->
+    <string name="export_format_log_csv">日志 CSV</string>
+    <string name="export_format_log_json">日志 JSON</string>
+    <string name="export_format_log_gpx">GPX</string>
+    <string name="export_format_log_kml">KML</string>
+    <string name="export_format_log_wigle">WiGLE CSV</string>
+    <string name="export_radios_both">两者</string>
+    <string name="export_radios_wifi_only">仅 Wi-Fi</string>
+    <string name="export_radios_ble_only">仅 BLE</string>
+
+    <!-- Misc -->
+    <string name="misc_unknown_device">未知设备</string>
+    <string name="misc_unnamed">未命名</string>
+    <string name="misc_no_data">无数据</string>
+    <string name="misc_not_available">不可用</string>
+    <string name="misc_na">N/A</string>
+</resources>
