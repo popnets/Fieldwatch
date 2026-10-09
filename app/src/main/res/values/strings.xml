@@ -77,9 +77,9 @@
     <string name="settings_import_signatures">Import signatures</string>
     <string name="settings_export_settings">Export settings</string>
     <string name="settings_import_settings">Import settings</string>
-    <string name="settings_restore_defaults">Restore default signatures & presets</string>
+    <string name="settings_restore_defaults">Restore default signatures &amp; presets</string>
     <string name="settings_restore_defaults_desc">Restores built-in signature catalog and filter presets to factory state. Your added signatures and saved presets are deleted. Logs, sits, named radios, watchlist, fleets, and settings unaffected.</string>
-    <string name="settings_restore_confirm">Restore default signatures & presets?</string>
+    <string name="settings_restore_confirm">Restore default signatures &amp; presets?</string>
     <string name="settings_restore_confirm_body">This deletes your added signatures and saved presets. Logs, sits, named radios, watchlist, fleets, and settings unaffected.</string>
     <string name="settings_restore">Restore</string>
     <string name="settings_cancel">Cancel</string>
@@ -157,7 +157,7 @@
     <string name="reports_signature_candidates_desc">Re-matches catalog from log, looking for families promotable to signatures. Needs unique on-air ID on two or more radios.</string>
     <string name="filters_title">Filters</string>
     <string name="filters_presets_section">Presets</string>
-    <string name="filters_presets_desc">Tap to replace whole filter. Long-press chip to delete. Short stock set ships; Save current as… adds yours (Cameras, plaza −80, …). Stock chips you delete come back with Settings → Restore default signatures & presets.</string>
+    <string name="filters_presets_desc">Tap to replace whole filter. Long-press chip to delete. Short stock set ships; Save current as… adds yours (Cameras, plaza −80, …). Stock chips you delete come back with Settings → Restore default signatures &amp; presets.</string>
     <string name="filters_save_current_as">Save current as…</string>
     <string name="filters_save">Save</string>
     <string name="filters_radios_section">Radios</string>
