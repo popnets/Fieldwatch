@@ -8,7 +8,7 @@
     <string name="live_follow_path">Follow · path %.0f m · Restart clears path</string>
     <string name="live_watched_only">Watched only</string>
     <string name="live_named_only">Named only</string>
-    <string name="live_sit_running">Sit · %s · %s · %d radios%s</string>
+    <string name="live_sit_running" formatted="false">Sit · %s · %s · %d radios%s</string>
     <string name="live_sit_memory_cap"> · memory cap</string>
     <string name="live_sit_radio_cap"> · %d cap</string>
     <string name="live_end_sit">End sit</string>
@@ -20,9 +20,9 @@
     <string name="live_flood_dialog_body">%s</string>
     <string name="live_flood_continue">Continue</string>
     <string name="live_flood_hide_these">Hide these</string>
-    <string name="live_seen_times_format">First %s · Last %s</string>
+    <string name="live_seen_times_format" formatted="false">First %s · Last %s</string>
     <string name="live_age_seconds">%ds</string>
-    <string name="live_age_minutes_seconds">%dm %ds</string>
+    <string name="live_age_minutes_seconds" formatted="false">%dm %ds</string>
     <string name="live_age_minutes">%dm</string>
     <string name="live_age_hours_minutes">%dh %dm</string>
     <string name="live_age_hours">%dh</string>
@@ -37,7 +37,7 @@
     <string name="settings_keep_screen_on">Keep screen on</string>
     <string name="settings_keep_screen_on_desc">On by default. Stops display from sleeping while Fieldwatch is open so BLE is not parked when phone blanks. Scanning still runs in notification if you leave the app. Turn off when pocketing phone.</string>
     <string name="settings_privacy_mode">Privacy mode</string>
-    <string name="settings_privacy_mode_desc">Hides last three octets of every MAC on Live, radar, timeline, detail, Hunt, Named radios, and watchlist cards as **:**:** so screen and sit reports do not show full addresses. GPS last-fix and Debrief / AI Export / detail Share coordinates become \"masked\"; street names omitted from those sit reports. First three octets (OUI / vendor prefix) stay. Off by default. Map on Reports → Path still loads when Online place names and maps is on. Logs, matching, filters, Hunt math, Moving with you, and saved signatures still use real MAC and GPS. A TAK / CoT feed, if you turned it on, is paused while this is on so full MACs and coordinates are not sent onto LAN. Turn off when you need full address or coordinates on screen.</string>
+    <string name="settings_privacy_mode_desc">Hides last three octets of every MAC on Live, radar, timeline, detail, Hunt, Named radios, and watchlist cards as **:**:** so screen and sit reports do not show full addresses. GPS last-fix and Debrief / AI Export / detail Share coordinates become "masked"; street names omitted from those sit reports. First three octets (OUI / vendor prefix) stay. Off by default. Map on Reports → Path still loads when Online place names and maps is on. Logs, matching, filters, Hunt math, Moving with you, and saved signatures still use real MAC and GPS. A TAK / CoT feed, if you turned it on, is paused while this is on so full MACs and coordinates are not sent onto LAN. Turn off when you need full address or coordinates on screen.</string>
     <string name="settings_scanning">Scanning</string>
     <string name="settings_scan_intensity">Scan intensity · %s</string>
     <string name="settings_scan_saver">Battery saver</string>
@@ -91,7 +91,7 @@
     <string name="settings_diagnostics">Diagnostics</string>
     <string name="settings_diagnostics_desc">Lists phone, radios, and scan options.</string>
     <string name="settings_about">About</string>
-    <string name="settings_version">Version %s (%d)</string>
+    <string name="settings_version" formatted="false">Version %s (%d)</string>
     <string name="settings_license">MIT License</string>
     <string name="settings_github">GitHub</string>
     <string name="settings_manual">User manual</string>
@@ -101,7 +101,7 @@
     <string name="reports_privacy_mode_notice">Privacy mode on. MAC tails in Debrief, sit compare, AI Export (sit or compare), and detail Share are **:**:**. GPS coords and Remote ID UAS ID in those reports masked. Log file, sit export, and GPX/KML/WiGLE files still have full addresses and lat/lon.</string>
     <string name="reports_sits_section">Sits</string>
     <string name="reports_sits_desc">A sit is a named window of radios heard here. Selection below drives Path, Debrief, and Compare's this-sit side: open sit, selected saved sit, or last 15 min if never started.</string>
-    <string name="reports_this_sit">This sit: %s · %s · %d radios</string>
+    <string name="reports_this_sit" formatted="false">This sit: %s · %s · %d radios</string>
     <string name="reports_end_sit">End sit</string>
     <string name="reports_start_sit">Start sit</string>
     <string name="reports_no_sit_running">No sit running. Start sit here. Path and Debrief stay last 15 min until you do.</string>
@@ -109,7 +109,7 @@
     <string name="reports_no_saved_sits">No saved sits.</string>
     <string name="reports_last_15_minutes">Last 15 minutes</string>
     <string name="reports_last_15_minutes_desc">Path and Debrief use RAM, not a saved sit.</string>
-    <string name="reports_sit_subtitle_format">%s · %s · %d radios%s</string>
+    <string name="reports_sit_subtitle_format" formatted="false">%s · %s · %d radios%s</string>
     <string name="reports_extra_attention"> · Extra attention %d</string>
     <string name="reports_end_sit_to_pick">End sit to pick a saved one for Path and Debrief.</string>
     <string name="reports_rename">Rename</string>
@@ -123,12 +123,12 @@
     <string name="reports_debrief_section">Debrief</string>
     <string name="reports_debrief_desc">Narrative summary of selected sit. Includes street names when Online place names and maps on. Pattern match, not identity. Not a safety finding.</string>
     <string name="reports_debrief_generate">Generate Debrief</string>
-    <string name="reports_debrief_this_sit_format">This sit: %s — named window (up to %d). Same as Debrief.</string>
+    <string name="reports_debrief_this_sit_format" formatted="false">This sit: %s — named window (up to %d). Same as Debrief.</string>
     <string name="reports_compare_section">Compare</string>
     <string name="reports_compare_desc">Two sits side by side: MAC, class, signal, first/last, decoded, fleets, aircraft. Pattern match, not identity. Not a safety finding.</string>
     <string name="reports_compare_with">Compare with</string>
-    <string name="reports_compare_this_sit_format">This sit: %s — named window (up to %d). Same as Debrief.</string>
-    <string name="reports_compare_other_sit_format">Other sit: %s — named window (up to %d).</string>
+    <string name="reports_compare_this_sit_format" formatted="false">This sit: %s — named window (up to %d). Same as Debrief.</string>
+    <string name="reports_compare_other_sit_format" formatted="false">Other sit: %s — named window (up to %d).</string>
     <string name="reports_compare_last_15">This sit: last 15 min in memory (~400 radios). Same as Debrief.</string>
     <string name="reports_compare_generate">Generate compare</string>
     <string name="reports_export_section">Export</string>
@@ -410,7 +410,7 @@ and %d more</string>
     <string name="common_hours_ago">%d hr ago</string>
     <string name="common_days_ago">%d days ago</string>
     <string name="notification_scanning">Fieldwatch scanning</string>
-    <string name="notification_scanning_desc">Wi-Fi: %d · BLE: %d · Log: %d lines</string>
+    <string name="notification_scanning_desc" formatted="false">Wi-Fi: %d · BLE: %d · Log: %d lines</string>
     <string name="notification_tap_to_open">Tap to open</string>
     <string name="dialog_confirm">Confirm</string>
     <string name="dialog_warning">Warning</string>
